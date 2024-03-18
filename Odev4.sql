@@ -244,7 +244,9 @@ group by order_id
 order by total limit 1;
 
 ---94 Müşterilerimin içinde en uzun isimli müşteri
-select max(contact_name) from customers;
+select  company_name,length(company_name) as len
+from customers
+order by len desc limit 1;
 
 ---95 Çalışanlarımın Ad, Soyad ve Yaşları
 select first_name,last_name, EXTRACT(YEAR FROM AGE(CURRENT_DATE, birth_date)) AS yas 
